@@ -1,0 +1,6 @@
+{
+  "name": "Vidraçaria RS 240 Ltda",
+  "description": "Vidraçaria especializada em vidros temperados, box para banheiro, espelhos sob medida e fachadas em Portão - RS.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

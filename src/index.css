@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  /* Core Palette Tokens (HSL) — Deep Architectural Midnight + Azul Oceano (#0EA5E9) + Dourado Premium (#D4AF37) */
+  --bg-canvas: 218 42% 5%;
+  --bg-surface: 217 34% 8%;
+  --bg-elevated: 217 30% 11%;
+  --bg-subtle: 216 26% 14%;
+
+  --text-primary: 210 25% 96%;
+  --text-secondary: 215 18% 72%;
+  --text-muted: 215 14% 52%;
+
+  /* Mandatory Brand Accents */
+  --accent-ocean: 199 89% 48%;       /* #0EA5E9 */
+  --accent-ocean-bright: 199 92% 58%;
+  --accent-ocean-deep: 201 92% 38%;
+  --accent-gold: 46 65% 52%;         /* #D4AF37 */
+  --accent-gold-soft: 46 58% 64%;
+
+  /* Hairlines & Glass Surfaces */
+  --border-hairline: 216 24% 18%;
+  --border-glass: 200 35% 30%;
+  --glass-surface: 217 34% 9%;
+
+  /* Semantic States */
+  --state-success: 158 64% 44%;
+  --state-error: 0 76% 58%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: hsl(var(--bg-canvas));
+    color: hsl(var(--text-primary));
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: hsl(var(--bg-canvas));
+    color: hsl(var(--text-primary));
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent-ocean) / 0.28);
+    color: hsl(var(--text-primary));
+  }
+}
+
+/* Subtle Architectural Glassmorphism */
+.glass-panel {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--glass-surface) / 0.76) 0%,
+    hsl(var(--bg-canvas) / 0.88) 100%
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid hsl(var(--border-hairline));
+}
+
+.glass-nav {
+  background: hsl(var(--bg-canvas) / 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid hsl(var(--border-hairline) / 0.7);
+}
+
+.hairline-divider {
+  border-color: hsl(var(--border-hairline));
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid hsl(var(--accent-ocean));
+  outline-offset: 3px;
+}
